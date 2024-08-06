@@ -1,3 +1,68 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "footer";
+
+body {
+  background-color: #f8f9fa;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: none;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.list-group-item {
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #025956;
+  border-color: #000;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #025956;
+  transform: scale(1.05);
+}
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+}

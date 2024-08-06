@@ -1,8 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
-
+# SEARCH QURY CODE IMPORTANT
   def index
     @events = Event.where(visibility: true)
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        events.title ilike :query
+        OR events.description ilike :query
+        OR types.name ilike :query
+      SQL
+      @events = @events.joins(:type).where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show

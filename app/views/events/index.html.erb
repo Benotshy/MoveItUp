@@ -1,15 +1,35 @@
-<div class="container"><p style="color: green"><%= notice %></p>
-
-<h1>Events</h1>
-
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "Create your event", new_event_path %>
+<h1 class="text-center my-4">Events</h1>
+<%= form_with url: events_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
+            <p class="card-text"><%= event.description %></p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Address:</strong> <%= event.address %></li>
+              <li class="list-group-item"><strong>Price:</strong> €<%= event.price %></li>
+              <li class="list-group-item"><strong>Capacity:</strong> <%= event.capacity %></li>
+              <li class="list-group-item"><strong>Organizer:</strong> <%= event.user.email %></li>
+              <li class="list-group-item"><strong>Type:</strong> <%= event.type.name %></li>
+              <li class="list-group-item"><strong>Visibility:</strong> <%= event.visibility ? 'Visible' : 'Hidden' %></li>
+            </ul>
+          </div>
+          <div class="card-footer text-muted">
+            <a href="<%= event_path(event) %>" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
