@@ -34,9 +34,9 @@ types = [
 types = Type.create!(types)
 
 events = [
-  { date: '2024-08-01', address: '123 Main St, City A', price: 50.0, capacity: 100, title: 'Music Concert', description: 'A great music concert.', user_id: users[0].id, type_id: types[0].id },
-  { date: '2024-09-01', address: '456 Elm St, City B', price: 0.0, capacity: 50, title: 'Tech Conference', description: 'Tech conference with keynote speakers.', user_id: users[1].id, type_id: types[1].id },
-  { date: '2024-10-01', address: '789 Oak St, City C', price: 20.0, capacity: 30, title: 'Startup Meetup', description: 'Networking event for startups.', user_id: users[2].id, type_id: types[2].id }
+  { date: '2024-08-01', address: '123 Main St, City A', price: 50.0, capacity: 100, title: 'Music Concert', description: 'A great music concert.', user_id: users[0].id, type_id: types[0].id, visibility: true },
+  { date: '2024-09-01', address: '456 Elm St, City B', price: 0.0, capacity: 50, title: 'Tech Conference', description: 'Tech conference with keynote speakers.', user_id: users[1].id, type_id: types[1].id, visibility: true },
+  { date: '2024-10-01', address: '789 Oak St, City C', price: 20.0, capacity: 30, title: 'Startup Meetup', description: 'Networking event for startups.', user_id: users[2].id, type_id: types[2].id, visibility: true }
 ]
 
 # Create Events
