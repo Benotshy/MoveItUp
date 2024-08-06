@@ -10,13 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_23_183933) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_23_190318) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "date"
+    t.string "address"
+    t.float "price"
+    t.integer "capacity"
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.bigint "type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_id"], name: "index_events_on_type_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_events", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_user_events_on_event_id"
+    t.index ["user_id"], name: "index_user_events_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "name"
+    t.string "surname"
+    t.string "city"
+    t.datetime "date_of_birth"
+    t.string "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -26,4 +61,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_183933) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "types"
+  add_foreign_key "events", "users"
+  add_foreign_key "user_events", "events"
+  add_foreign_key "user_events", "users"
 end
