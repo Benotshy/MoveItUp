@@ -1,1 +1,45 @@
 // Specific CSS for your home-page
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  background: #FEFAFA;
+  background-color: #FEFAFA;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.3px;
+}
+
+p.alert {
+  margin: 0px;
+  padding: 0px;
+}
+/* The hero image */
+.hero-image {
+  background-image: url("https://res.cloudinary.com/dneopsx5s/image/upload/v1722764325/e9ickst9d6w1gke53bwl.png");
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
