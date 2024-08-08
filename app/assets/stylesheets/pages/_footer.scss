@@ -15,8 +15,10 @@
   color: #025956;
   opacity: 0.15;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 16px;
+  text-align: center;
   padding: 0px 10px;
+  margin: 0;
 }
 .footer-links a:hover {
   opacity: 1;
@@ -96,7 +98,7 @@
 .footer-distributed .footer-center i{
   background-color:  #fff;
   color: #EE5A36;
-  font-size: 25px;
+  font-size: 16px;
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -104,6 +106,10 @@
   line-height: 42px;
   margin: 10px 15px;
   vertical-align: middle;
+}
+
+.footer-center p{
+  font-size: 14px;
 }
 
 .footer-distributed .footer-center i.fa-envelope{
