@@ -1,68 +1,180 @@
-// Import page-specific CSS files here.
 @import "home";
-@import "footer";
+/* Banner Image */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-body {
-  background-color: #f8f9fa;
-}
+#indexpage {
 
-.card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border-radius: 10px;
-}
+  .banner-image {
+    width: 100%;
+    height: 50vh;
+    background-image: url('https://images.sharefaith.com/images/3/1308865004650_1525/img_mouseover3.jpg');
+    background-size: cover;
+    background-position: center;
+  }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+  /* Main Title */
+  .main-tittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 50vh;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent overlay with #025956 */
+    text-shadow: 2px 2px 4px #000000;
+  }
 
-.card-body {
-  padding: 20px;
-}
+  /* Card Styling */
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+  }
 
-.card-footer {
-  background-color: #fff;
-  border-top: none;
-}
+  .card:hover {
+    transform: translateY(-5px);
+  }
 
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: none;
+  }
 
-.card-subtitle {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
 
-.card-text {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
+  /* Second Title */
+  .second-title {
+    font-size: 2.5rem;
+    /* Adjust font size as needed */
+    text-align: center;
+    color: #025956;
+    /* Match the theme color */
+    font-family: 'Roboto', sans-serif;
+    /* Use the imported font */
+    margin: 2rem 0;
+    /* Adjust top and bottom margins */
+    position: relative;
+    animation: bounce 4s infinite, color-change 10s infinite;
+    /* Slowed down animation */
+  }
 
-.list-group-item {
-  font-size: 0.9rem;
-}
+  @keyframes bounce {
 
-.btn-primary {
-  background-color: #025956;
-  border-color: #000;
-  transition: background-color 0.2s, transform 0.2s;
-}
+    0%,
+    100% {
+      transform: translateY(0);
+    }
 
-.btn-primary:hover {
-  background-color: #025956;
-  transform: scale(1.05);
-}
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 
-.container {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
+  @keyframes color-change {
+    0% {
+      color: #025956;
+      /* Initial color */
+    }
 
-h1 {
-  font-family: 'Arial', sans-serif;
-  font-size: 2.5rem;
-  color: #333;
+    50% {
+      color: #ff6347;
+      /* Tomato color */
+    }
+
+    100% {
+      color: #025956;
+      /* Back to initial color */
+    }
+  }
+
+  .card-body {
+    padding: 20px;
+    margin-bottom: -20px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #025956;
+    font-weight: bold;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0rem;
+  }
+
+  /* Card Footer Styling */
+  .card-footer {
+    background-color: transparent;
+    border-top: none;
+    padding: 15px;
+    /* Increased padding to create space around the footer */
+    position: relative;
+    /* Ensure absolute positioning of child elements within it */
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .card-footer .price {
+    font-size: 1rem;
+    color: #025956;
+    font-weight: bold;
+    display: block;
+    /* Ensure price is on its own line */
+    margin-bottom: 15px;
+    /* Space between price and button */
+  }
+
+  .card-footer .btn-primary {
+    background-color: #025956;
+    border-color: #025956;
+    transition: background-color 0.2s;
+    display: block;
+    /* Ensure button takes up the full width available */
+    /* Remove default margin */
+  }
+
+  .card-footer .btn-primary:hover {
+    background-color: #023e40;
+    border-color: #023e40;
+  }
+
+  .card-footer .date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #025956;
+  }
+
+  .card .icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #025956;
+    font-size: 1.2rem;
+  }
+
+  .card .heart-icon {
+    position: absolute;
+    top: 15px;
+    right: 45px;
+    color: #e74c3c;
+    font-size: 1.2rem;
+  }
 }
