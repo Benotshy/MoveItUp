@@ -1,45 +1,219 @@
 // Specific CSS for your home-page
-html {
-  font-size: 100%;
-  box-sizing: border-box;
-}
+#homepage {
+  p.alert {
+    margin: 0px;
+    padding: 0px;
+  }
+  /* The hero image */
+  .hero-image {
+    background-image: url("https://res.cloudinary.com/dneopsx5s/image/upload/v1722764325/e9ickst9d6w1gke53bwl.png");
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+  }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
+  /* Place text in the middle of the image */
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  // Specific CSS for your home-page
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-body {
-  height: 100%;
-  background: #FEFAFA;
-  background-color: #FEFAFA;
-  margin: 0px;
-  padding: 0px;
-  line-height: 1.3px;
-}
+  html {
+    font-size: 100%;
+    box-sizing: border-box;
+  }
 
-p.alert {
-  margin: 0px;
-  padding: 0px;
-}
-/* The hero image */
-.hero-image {
-  background-image: url("https://res.cloudinary.com/dneopsx5s/image/upload/v1722764325/e9ickst9d6w1gke53bwl.png");
-  background-size: cover;
-  height: 600px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 32px;
-}
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
 
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  body {
+    height: 100%;
+    background: #FEFAFA;
+    background-color: #FEFAFA;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.3px;
+  }
+
+  p.alert {
+    margin: 0px;
+    padding: 0px;
+  }
+  /* The hero image */
+  .hero-image {
+    background-image: url("https://res.cloudinary.com/dneopsx5s/image/upload/v1722764325/e9ickst9d6w1gke53bwl.png");
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  /* Place text in the middle of the image */
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .events {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .event-col p {
+    color: #5D666F;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
+  .event-col h3 {
+    color: #025956;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+  }
+
+  h1 {
+    color: #025956;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+  }
+  p {
+    color: #5D666F;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
+  .row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .event-col{
+    flex-basis: 31%;
+    background: #FEFAFA;
+    border-radius: 10px;
+    margin-bottom: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    color: #025956;
+    text-align: center;
+    font-weight: 150;
+    font-size: 12px;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+  }
+
+  .event-col img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .event-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  @media(max-width: 700px){
+    .row{
+      flex-direction: column;
+    }
+    .event-col{
+      flex-basis: 100%;
+    }
+  }
+
+  .cities {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .cities-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+
+  .cities-col img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .layer {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  .layer:hover {
+    background: rgba(236, 184, 124, 0.5);
+  }
+
+  .layer h3{
+    width: 100%;
+    font-weight: 200px;
+    letter-spacing: 3px;
+    color: #fff;
+    font-size: 20px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+  }
 }

@@ -12,4 +12,22 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/footer";
+@import "pages/home";
 
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  background: #FEFAFA;
+  background-color: #FEFAFA;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.3px;
+}
