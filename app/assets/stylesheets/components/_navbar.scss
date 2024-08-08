@@ -1,14 +1,39 @@
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
   background: #FEFAFA;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 2% 6%;
+}
+
+.navbar-nav {
+  flex: 1;
+  text-align: right;
+}
+
+.navbar-lewagon ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 6px 8px;
+  position: relative;
+}
+
+.navbar-lewagon ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: red;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.navbar-lewagon ul li:hover::after{
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
