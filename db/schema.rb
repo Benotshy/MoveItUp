@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_190318) do
     t.string "title"
     t.string "description"
     t.string "city"
-    t.boolean "visibility", default: false
+    t.boolean "visibility", default: true
     t.bigint "user_id", null: false
     t.bigint "type_id", null: false
     t.datetime "created_at", null: false

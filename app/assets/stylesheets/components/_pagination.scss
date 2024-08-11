@@ -1,0 +1,154 @@
+/* Style the pagination container */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px; /* Adjust spacing between buttons */
+}
+
+/* Style individual pagination links */
+.pagination .page-link {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 0;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff; /* Text color */
+  background-color: #025956; /* Background color */
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .page-link:hover {
+  background-color: #014d43; /* Darker shade on hover */
+  color: #e0e0e0; /* Light color on hover */
+}
+
+/* Style for disabled buttons */
+.pagination .page-link.disabled {
+  background-color: #d1d1d1;
+  color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+/* Style for active page */
+.pagination .page-link.active {
+  background-color: #004d40;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+// for first and last css
+.first a, .last a {
+  position: relative;
+  padding: 8px 25px;
+  font-weight: bold;
+  color: white;
+  background-color: #025956;
+  border: 2px solid #025956;
+  clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+.first a::before, .last a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #025956;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.first a::before {
+  left: -6px;
+  clip-path: polygon(100% 50%, 0% 100%, 0% 0%);
+}
+
+.last a::after {
+  right: -6px;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+}
+
+.first a:hover, .last a:hover {
+  background-color: #fff;
+  color: #025956;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.first a:hover::before, .last a:hover::after {
+  background-color: #fff;
+}
+// ends here
+// css for the buttons previous & next
+/* Previous Button */
+/* Previous Button */
+.previous-button {
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #025956;
+  background-color: #f7f7f7;
+  border: 2px solid #025956;
+  border-radius: 20px 0 0 20px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.previous-button::before {
+  content: '◀';
+  margin-right: 8px;
+  font-size: 12px;
+  transition: margin-right 0.3s;
+}
+
+.previous-button:hover {
+  background-color: #025956;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.previous-button:hover::before {
+  margin-right: 12px;
+}
+
+/* Next Button */
+.next-button {
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #025956;
+  background-color: #f7f7f7;
+  border: 2px solid #025956;
+  border-radius: 0 20px 20px 0;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.next-button::after {
+  content: '▶';
+  margin-left: 8px;
+  font-size: 12px;
+  transition: margin-left 0.3s;
+}
+
+.next-button:hover {
+  background-color: #025956;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.next-button:hover::after {
+  margin-left: 12px;
+}
