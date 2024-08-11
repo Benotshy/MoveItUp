@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+#mainID {
+  .container {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 40px auto !important;
+    /* Centered with some margin from all sides */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .event-header {
+    display: flex;
+    align-items: flex-start;
+
+    .event-image {
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+      margin-right: 100px;
+      /* Added space between the image and event details */
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
+
+    .event-details {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      line-height: 1.2rem;
+
+      .event-organizer {
+        font-size: 14px;
+        color: gray;
+        text-transform: uppercase;
+        font-family: "Caveat", cursive;
+      }
+
+      #user-name {
+        text-decoration: underline;
+        transition: font-size 0.3s ease;
+        /* Smooth transition for font size */
+      }
+
+      #user-name:hover {
+        font-size: 16px;
+        /* Adjust the size as needed */
+        cursor: pointer;
+      }
+
+
+      .event-details-btn {
+        background-color: #025956;
+        padding: 5px 15px;
+        /* Adjusted for better button appearance */
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+        border: none;
+        /* Remove default border */
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        outline: none;
+        /* Remove default focus outline */
+        margin-right: 5px;
+        margin-top: 15px;
+      }
+
+      .event-details-btn i {
+        color: #d64e30;
+        transition: color 0.3s ease;
+      }
+
+      .event-details-btn:hover i {
+        color: #025956;
+      }
+
+      .event-details-btn:hover {
+        background-color: #d64e30;
+        /* Change background color on hover */
+        transform: scale(1.05);
+        /* Slightly enlarge the button */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Add shadow for depth */
+      }
+
+      .event-details-btn:focus {
+        box-shadow: 0 0 0 3px #03b6b09f;
+        /* Add focus outline for accessibility */
+      }
+
+
+      .event-title {
+        font-size: 24px;
+        color: #d64e30;
+        margin-bottom: 10px;
+        font-family: "Inter", sans-serif;
+
+      }
+
+      .event-info i {
+        margin-right: 8px;
+        color: #025956;
+        /* Adjust icon color as needed */
+      }
+
+      .event-info p {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+
+      .by {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: black;
+      }
+
+      .event-info {
+        font-size: 16px;
+        color: #555;
+
+        p {
+          margin: 5px 0;
+        }
+      }
+
+      .event-buttons {
+        margin-top: 20px;
+
+        .event-button {
+          display: inline-block;
+          background-color: #025956;
+          color: #fff;
+          padding: 10px 15px;
+          margin-right: 10px;
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: bold;
+
+          &.book {
+            background-color: #50b948;
+          }
+
+          &.save {
+            background-color: #f5a623;
+          }
+
+          &.share {
+            background-color: #4a90e2;
+          }
+        }
+      }
+    }
+  }
+
+  /* New container with light yellow background and rounded corners */
+  .event-description-container {
+    background-color: #fffae5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+
+  .event-description {
+    margin-top: 20px;
+    /* Remove the margin-top here since the container has it */
+
+    h3 {
+      color: #FB5E01;
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 10px;
+      line-height: 1.6;
+      color: #333;
+    }
+  }
+
+  .event-organizer-info {
+    h3 {
+      color: #FB5E01;
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 10px;
+      line-height: 1.2;
+      color: #000000;
+    }
+  }
+
+  .event-organised-by {
+    margin-top: 30px;
+
+    .organised-by {
+      color: #FB5E01;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+  }
+
+  .event-tags {
+    margin-top: 20px;
+
+    h3 {
+      color: #025956;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .tag {
+      background-color: #fff6cc;
+      border-radius: 20px;
+      padding: 5px 10px;
+      color: #025956;
+      text-transform: uppercase;
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, text-decoration 0.3s ease;
+      /* Smooth transition effect */
+
+    }
+
+    .tag:hover {
+      background-color: #e0d8b0;
+      /* Optional: change background color on hover */
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .event-tag {
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #555;
+      padding: 5px 10px;
+      margin-right: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  }
+
+  .event-map {
+    margin-top: 30px;
+    text-align: center;
+
+    img {
+      max-width: 30%;
+      border-radius: 8px;
+    }
+  }
+
+  .event-footer-links {
+    margin-top: 40px;
+    text-align: center;
+
+    .event-footer-link {
+      margin-right: 10px;
+      color: #025956;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  .event-map {
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* Light background for the section */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .event-map h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #025956;
+    margin: 0;
+    padding-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .event-map h3 i {
+    margin-right: 8px;
+    color: #025956;
+    /* Icon color */
+  }
+
+  .event-map h3::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #025956 0%, #00aaff 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .event-map h3:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    cursor: pointer;
+  }
+
+  .event-details i {
+    color: black
+  }
+
+  .event-actions-footer {
+    gap: 10px;
+    /* Space between buttons */
+    margin-top: 50px;
+
+
+    .action-link i {
+      margin-right: 6px; /* Space between icon and text */
+      font-size: 14px; /* Adjust icon size */
+    }
+
+    /* Specific colors removed */
+
+    /* Hover effect for all links */
+    .action-link:hover {
+      color: #555; /* Slightly darker color on hover */
+      transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+
+    /* Smooth zooming animation for edit and back links */
+    .edit-link:hover, .back-link:hover {
+      animation: zoom 0.3s ease; /* Zooming animation */
+    }
+
+    @keyframes zoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    /* Special animation for delete link */
+    .delete-link:hover i {
+      animation: shake 0.5s ease; /* Shaking animation */
+    }
+
+    /* Remove border and background color for delete link */
+    .delete-link {
+      color: #f44336; /* Red color for delete link */
+      border: none; /* Remove border */
+      background-color: transparent;
+      margin-top: 25px; /* Remove background color */
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-4px); }
+      100% { transform: translateX(0); }
+    }
+
+  }
+
+
+}

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 # SEARCH QURY CODE IMPORTANT
   def index
-    @events = Event.where(visibility: true)
+    @events = Event.where(visibility: true).bonzo(params[:page]).per(6)
     if params[:query].present?
       sql_subquery = <<~SQL
         events.title ilike :query

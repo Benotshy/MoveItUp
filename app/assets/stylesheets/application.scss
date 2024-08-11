@@ -13,6 +13,9 @@
 @import "pages/index";
 @import "pages/footer";
 @import "pages/home";
+@import 'components/pagination';
+@import 'pages/show';
+
 
 html {
   font-size: 100%;

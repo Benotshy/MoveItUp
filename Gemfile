@@ -25,6 +25,9 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+#allows you to split your records across multiple pages and provides helpers to generate pagination controls in your views.
+gem 'kaminari'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
