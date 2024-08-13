@@ -4,6 +4,7 @@
 
   /* Container for Cards */
   .container {
+    margin-top: 50px;
     padding: 0; /* Remove container padding */
   }
 
@@ -27,8 +28,6 @@
     background-image: url('https://res.cloudinary.com/dneopsx5s/image/upload/v1723281650/Black_and_White_Modern_Black_Friday_Sale_Banner_1600_x_500_px_1_ybsc6p.png');
     background-size: cover;
     background-position: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
   }
 
   /* Button Event */
@@ -67,7 +66,7 @@
     transition: transform 0.2s ease-in-out;
     position: relative;
     width: 100%;
-    max-width: 280px;
+    max-width: 350px;
     margin-bottom: 15px; /* Space between rows */
   }
 
@@ -88,7 +87,7 @@
     padding: 15px;
     margin-bottom: -15px;
   }
-  
+
 
   .card-title {
     font-size: 1rem;
@@ -161,13 +160,11 @@
 
   /* Second Title */
   .second-title {
-    font-size: 1rem;
+    font-size: 22px;
     text-align: center;
     color: #025956;
-    font-family: 'Roboto', sans-serif;
     margin: 2rem 0;
     position: relative;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: fade-in 3s ease-in-out;
     font-weight: 550;
   }
