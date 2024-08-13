@@ -15,6 +15,8 @@ class EventsController < ApplicationController
 
   def show
     # @event is already set by the before_action
+    @event = Event.find(params[:id])
+    @participations = @event.participations || []
   end
 
   def new
@@ -34,6 +36,17 @@ class EventsController < ApplicationController
       else
         render :new, alert: @event.errors.full_messages
       end
+  end
+
+  def participate
+    @event = Event.find(params[:id])
+    @participation = current_user.participations.build(event: @event, status: 'pending')
+
+    if @participation.save
+      redirect_to pending_participations_path, notice: 'Your participation request is pending approval.'
+    else
+      redirect_to event_path(@event), alert: 'Something went wrong. Please try again.'
+    end
   end
 
   def update

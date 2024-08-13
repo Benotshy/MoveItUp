@@ -27,6 +27,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 #allows you to split your records across multiple pages and provides helpers to generate pagination controls in your views.
 gem 'kaminari'
+#  a helper method available in your controllers and views to retrieve the currently logged-in user. 
+gem 'devise'
 
 
 # Use Redis adapter to run Action Cable in production

@@ -1,0 +1,25 @@
+<div class="pending-container">
+  <div class="pending-header">
+    <h1>Your Participation Requests</h1>
+  </div>
+
+  <div class="pending-content">
+    <% if @pending_participations.any? %>
+      <ul class="pending-list">
+        <% @pending_participations.each do |participation| %>
+          <li class="pending-item">
+            <div class="pending-event">
+              <h2><%= participation.event.title %></h2>
+              <p><strong>Status:</strong> <%= participation.status %></p>
+              <p><strong>Date:</strong> <%= participation.event.date.strftime('%d %B %Y - %H:%M') %></p>
+              <p><strong>Location:</strong> <%= participation.event.address %></p>
+              <p><strong>Capacity:</strong> <%= participation.event.capacity %> people</p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>You have no pending participation requests.</p>
+    <% end %>
+  </div>
+</div>
