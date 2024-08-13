@@ -1,4 +1,35 @@
 <div id="mainID">
+<div class="container">
+<div class="unique-event-details">
+
+  <% if current_user == @event.user %>
+    <div class="unique-participant-list">
+      <h3 class="list-heading">Approved Participants</h3>
+      <ul>
+        <% @participants.each do |participation| %>
+          <li>
+            <%= participation.user.name %>
+          </li>
+        <% end %>
+      </ul>
+
+      <h3 class="list-heading">Pending Participants</h3>
+      <ul>
+        <% @pending_participations.each do |participation| %>
+          <li>
+            <%= participation.user.name %>
+            <%= button_to 'Accept', approve_participation_path(participation), method: :patch, class: 'unique-accept-button' %>
+            <%= button_to 'Decline', reject_participation_path(participation), method: :patch, class: 'unique-decline-button' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <%= button_to 'Participate', participations_path(event_id: @event.id), method: :post, class: 'unique-participate-button' %>
+  <% end %>
+</div>
+
+</div>
   <div class="container">
     <div class="event-header">
       <img src="https://superchargedracing.com/wp-content/uploads/2021/10/karting-5.jpg" alt="Event Image" class="event-image">
@@ -65,17 +96,17 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Are you sure you want to participate in this event?</h2>
-    <%= form_with url: participate_event_path, method: :post, local: true, id: 'participate-form' do %>
-      <%= hidden_field_tag :event_id, nil %>
-      <button type="submit" class="btn btn-success">Yes, I'm sure</button>
-      <button type="button" class="btn btn-danger" id="cancel-participation">No, Cancel</button>
-    <% end %>
+    <%= form_with url: participations_path(event_id: @event.id), method: :post, local: true, id: 'participate-form' do %>
+  <%= hidden_field_tag :event_id, @event.id %>
+  <button type="submit" class="btn btn-success">Yes, I'm sure</button>
+  <button type="button" class="btn btn-danger" id="cancel-participation">No, Cancel</button>
+<% end %>
   </div>
 </div>
 
 <!-- JavaScript for Modal Handling -->
 <script>
- document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('turbo:load', () => {
   const modal = document.getElementById('participation-modal');
   const participateButton = document.getElementById('participate-button');
   const closeModal = document.querySelector('.modal .close');
