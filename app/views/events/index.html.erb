@@ -2,8 +2,7 @@
   <div class="banner-image"></div>
 
   <h1 class="text-center my-4 second-title">
-    Discover Current Events in Your City<br>
-    Do you want to add your own event?<%= link_to "Click here", new_event_path, class: "btn btn-link ml-3 button-event" %>
+    Do you want to add your own event?<br><%= link_to "Click here", new_event_path, class: "btn btn-primary btn-sm" %>
   </h1>
 
   <div class="container">
@@ -12,7 +11,21 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <!-- Hardcoded Image -->
-            <img src="https://clubspeed.com/wp-content/uploads/2022/05/shutterstock_454936141-1-1024x539.jpg" alt="<%= event.title %>" class="card-img-top">
+              <% if event.type_id == 0 %>
+            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8Mg%3D%3D" alt="<%= event.title %>" class="card-img-top">
+          <% elsif event.type_id == 2 %>
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYXxlbnwwfHwwfHx8Mg%3D%3D" alt="<%= event.title %>" class="card-img-top">
+          <% elsif event.type_id == 5 %>
+            <img src="https://images.unsplash.com/photo-1550096141-7263640aa48c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGNvbW11bml0eXxlbnwwfHwwfHx8Mg%3D%3D" alt="<%= event.title %>" class="card-img-top">
+          <% elsif event.type_id == 4 %>
+            <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHdvcmtzaG9wfGVufDB8fDB8fHwy" alt="<%= event.title %>" class="card-img-top">
+          <% elsif event.type_id == 3 %>
+            <img src="https://images.unsplash.com/photo-1639763703351-c27defbb51b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHwy" alt="<%= event.title %>" class="card-img-top">
+          <% elsif event.type_id == 1 %>
+            <img src="https://images.unsplash.com/photo-1683117855296-979f17e62e87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="<%= event.title %>" class="card-img-top">
+          <% else %>
+            <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="<%= event.title %>" class="card-img-top">
+          <% end %> <!-- End of if statement -->
 
             <div class="card-body">
               <h5 class="card-title"><%= event.title %></h5>
@@ -29,7 +42,7 @@
             </div>
 
             <div class="card-footer">
-              <span class="price">€<%= event.price %></span>
+              <span class="price"><%= event.price %> MAD</span>
               <a href="<%= event_path(event) %>" class="btn btn-primary btn-sm">Book Now</a>
             </div>
           </div>
