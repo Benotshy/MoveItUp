@@ -18,3 +18,35 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-toggler {
+  border: none;
+  /* Remove border */
+}
+
+.search-input {
+  flex: 0.5;
+  /* Allow search bar to expand */
+  margin-right: 1rem;
+  /* Space between search bar and other elements */
+}
+
+.search-input .form-control {
+  border-radius: 0.25rem;
+  /* Rounded corners */
+  height: 2rem;
+  /* Adjust height */
+}
+
+.search-input .btn {
+  border-radius: 0.25rem;
+  margin-left: 5px;
+  /* Rounded corners */
+  height: 2rem;
+  /* Match button height */
+  padding: 0.25rem 0.5rem;
+  /* Adjust padding */
+}
+.avatar:hover{
+  cursor: pointer;
+}
