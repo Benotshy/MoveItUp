@@ -18,7 +18,6 @@
   color: #fff; /* Text color */
   background-color: #025956; /* Background color */
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .pagination .page-link:hover {
@@ -41,21 +40,22 @@
 }
 
 // for first and last css
-.first a, .last a {
+.first a,
+.last a {
   position: relative;
   padding: 8px 25px;
   font-weight: bold;
   color: white;
   background-color: #025956;
-  border: 2px solid #025956;
   clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+
   display: inline-block;
 }
 
-.first a::before, .last a::after {
-  content: '';
+.first a::before,
+.last a::after {
+  content: "";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -63,7 +63,6 @@
   height: 10px;
   background-color: #025956;
   border-radius: 50%;
-  transition: background-color 0.3s;
 }
 
 .first a::before {
@@ -76,14 +75,16 @@
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
 }
 
-.first a:hover, .last a:hover {
-  background-color: #fff;
+.first a:hover,
+.last a:hover {
+  background-color: #fefafa;
   color: #025956;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.first a:hover::before, .last a:hover::after {
-  background-color: #fff;
+.first a:hover::before,
+.last a:hover::after {
+  background-color: #fefafa;
 }
 // ends here
 // css for the buttons previous & next
@@ -93,7 +94,7 @@
   padding: 10px 20px;
   font-weight: bold;
   color: #025956;
-  background-color: #f7f7f7;
+  background-color: #fefafa;
   border: 2px solid #025956;
   border-radius: 20px 0 0 20px;
   text-decoration: none;
@@ -104,15 +105,14 @@
 }
 
 .previous-button::before {
-  content: '◀';
+  content: "◀";
   margin-right: 8px;
   font-size: 12px;
-  transition: margin-right 0.3s;
 }
 
 .previous-button:hover {
   background-color: #025956;
-  color: #fff;
+  color: #fefafa;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -125,8 +125,8 @@
   padding: 10px 20px;
   font-weight: bold;
   color: #025956;
-  background-color: #f7f7f7;
-  border: 2px solid #025956;
+  background-color: #fefafa;
+  border: 1px solid #025956;
   border-radius: 0 20px 20px 0;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
@@ -136,15 +136,14 @@
 }
 
 .next-button::after {
-  content: '▶';
+  content: "▶";
   margin-left: 8px;
   font-size: 12px;
-  transition: margin-left 0.3s;
 }
 
 .next-button:hover {
   background-color: #025956;
-  color: #fff;
+  color: #fefafa;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 #mainID {
   .container {
@@ -7,7 +7,7 @@
     max-width: 900px;
     margin: 40px auto !important;
     /* Centered with some margin from all sides */
-    background-color: #fff;
+    background-color: #fefafa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -54,7 +54,6 @@
         cursor: pointer;
       }
 
-
       .event-details-btn {
         background-color: #025956;
         padding: 5px 15px;
@@ -68,7 +67,8 @@
         font-weight: bold;
         text-transform: uppercase;
         cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.3s ease,
+          box-shadow 0.3s ease;
         outline: none;
         /* Remove default focus outline */
         margin-right: 5px;
@@ -98,13 +98,11 @@
         /* Add focus outline for accessibility */
       }
 
-
       .event-title {
         font-size: 24px;
         color: #d64e30;
         margin-bottom: 10px;
         font-family: "Inter", sans-serif;
-
       }
 
       .event-info i {
@@ -177,7 +175,7 @@
     /* Remove the margin-top here since the container has it */
 
     h3 {
-      color: #FB5E01;
+      color: #fb5e01;
       font-size: 19px;
       font-weight: bold;
     }
@@ -191,7 +189,7 @@
 
   .event-organizer-info {
     h3 {
-      color: #FB5E01;
+      color: #fb5e01;
       font-size: 19px;
       font-weight: bold;
     }
@@ -207,7 +205,7 @@
     margin-top: 30px;
 
     .organised-by {
-      color: #FB5E01;
+      color: #fb5e01;
       font-size: 17px;
       font-weight: bold;
     }
@@ -239,7 +237,6 @@
       font-weight: bold;
       transition: background-color 0.3s ease, text-decoration 0.3s ease;
       /* Smooth transition effect */
-
     }
 
     .tag:hover {
@@ -330,14 +327,13 @@
   }
 
   .event-details i {
-    color: black
+    color: black;
   }
 
   .event-actions-footer {
     gap: 10px;
     /* Space between buttons */
     margin-top: 50px;
-
 
     .action-link i {
       margin-right: 6px; /* Space between icon and text */
@@ -353,13 +349,18 @@
     }
 
     /* Smooth zooming animation for edit and back links */
-    .edit-link:hover, .back-link:hover {
+    .edit-link:hover,
+    .back-link:hover {
       animation: zoom 0.3s ease; /* Zooming animation */
     }
 
     @keyframes zoom {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.1); }
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
     }
 
     /* Special animation for delete link */
@@ -376,14 +377,21 @@
     }
 
     @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-4px); }
-      50% { transform: translateX(4px); }
-      75% { transform: translateX(-4px); }
-      100% { transform: translateX(0); }
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-4px);
+      }
+      50% {
+        transform: translateX(4px);
+      }
+      75% {
+        transform: translateX(-4px);
+      }
+      100% {
+        transform: translateX(0);
+      }
     }
-
   }
-
-
 }

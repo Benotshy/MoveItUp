@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #FEFAFA;
+  background: #fefafa;
   position: sticky;
   top: 0;
   left: 0;
@@ -21,7 +21,6 @@
 
 .navbar-toggler {
   border: none;
-  /* Remove border */
 }
 
 .search-input {
@@ -35,6 +34,7 @@
   border-radius: 0.25rem;
   /* Rounded corners */
   height: 2rem;
+  width: 200px;
   /* Adjust height */
 }
 
@@ -47,6 +47,12 @@
   padding: 0.25rem 0.5rem;
   /* Adjust padding */
 }
-.avatar:hover{
+.avatar:hover {
   cursor: pointer;
+}
+
+nav-link {
+  letter-spacing: 0.1px;
+  font-size: 12px;
+  text-transform: lowercase;
 }

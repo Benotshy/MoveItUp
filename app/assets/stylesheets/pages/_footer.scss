@@ -1,13 +1,12 @@
-/* Example of Custom CSS for Footer */
-
-/* Increase font size for footer links */
-
 footer .list-unstyled a {
-  font-size: 0.9rem;
+font-size: 0.9rem;
+color: #5D666F;
 }
-footer{
-  background-color: #025956;
+
+footer {
+  background-color: #FEFAFA;
   margin-top: 50px;
+  color: red;
 }
 /* Adjust icon sizes */
 footer .fab {
@@ -16,7 +15,7 @@ footer .fab {
 
 /* Add hover effect to social icons */
 footer .fab:hover {
-  color: #fff; /* Changes color on hover */
+  color: #000000; /* Changes color on hover */
   opacity: 0.8; /* Slightly dim the icon on hover */
 }
 
