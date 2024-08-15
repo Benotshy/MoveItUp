@@ -7,18 +7,19 @@ class EventsController < ApplicationController
     @events = Event.where(visibility: true).bonzo(params[:page]).per(6)
     if params[:query].present?
       sql_subquery = <<~SQL
-        events.title ilike :query
-        OR events.description ilike :query
-        OR types.name ilike :query
+        events.title ILIKE :query
+        OR events.description ILIKE :query
+        OR types.name ILIKE :query
       SQL
       @events = @events.joins(:type).where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
   def show
-    # @event is already set by the before_action
-    @event = Event.find(params[:id])
-    @participations = @event.participations || []
+    if current_user == @event.user
+      @approved_participants = @event.participations.where(status: 'approved')
+      @pending_participations = @event.participations.where(status: 'pending')
+    end
   end
 
   def new
@@ -33,28 +34,17 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-      if @event.save!
-       redirect_to events_url, notice: 'Event was successfully created.'
-      else
-        render :new, alert: @event.errors.full_messages
-      end
-  end
-
-  def participate
-    @event = Event.find(params[:id])
-    @participation = current_user.participations.build(event: @event, status: 'pending')
-
-    if @participation.save
-      redirect_to pending_participations_path, notice: 'Your participation request is pending approval.'
+    if @event.save
+      redirect_to @event, notice: 'Event was successfully created.'
     else
-      redirect_to event_path(@event), alert: 'Something went wrong. Please try again.'
+      render :new, alert: @event.errors.full_messages
     end
   end
 
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to event_url(@event), notice: 'Event was successfully updated.' }
+        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -62,8 +52,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event.destroy!
-
+    @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
     end
@@ -71,12 +60,10 @@ class EventsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def event_params
     params.require(:event).permit(:title, :description, :city, :capacity, :date, :address, :type_id)
   end

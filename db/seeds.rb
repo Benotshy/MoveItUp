@@ -17,11 +17,21 @@ User.destroy_all
 
 # Create Users
 users = [
-  { email: 'john.doe@example.com', password: '123456' },
-  { email: 'jane.smith@example.com', password: '123456' },
-  { email: 'alice.jones@example.com', password: '123456' },
-  { email: 'othmanebenchekroun@gmail.com', password: '123456' },
-  { email: 'sara.bouiala@gmail.com', password: '123456' },
+  { email: 'john.doe@example.com', password: '123456', name: 'John', surname: 'Doe' },
+  { email: 'jane.smith@example.com', password: '123456', name: 'Jane', surname: 'Smith' },
+  { email: 'alice.jones@example.com', password: '123456', name: 'Alice', surname: 'Jones' },
+  { email: 'othmanebenchekroun@gmail.com', password: '123456', name: 'Othmane', surname: 'Benchekroun' },
+  { email: 'sara.bouiala@gmail.com', password: '123456', name: 'Sara', surname: 'Bouiala' },
+  { email: 'mohammed.elhassan@gmail.com', password: '123456', name: 'Mohammed', surname: 'El Hassan' },
+  { email: 'fatima.zahra@example.com', password: '123456', name: 'Fatima', surname: 'Zahra' },
+  { email: 'hamid.abdallah@example.com', password: '123456', name: 'Hamid', surname: 'Abdallah' },
+  { email: 'yasmin.bennani@example.com', password: '123456', name: 'Yasmin', surname: 'Bennani' },
+  { email: 'adil.lahcen@example.com', password: '123456', name: 'Adil', surname: 'Lahcen' },
+  { email: 'meryem.oualid@example.com', password: '123456', name: 'Meryem', surname: 'Oualid' },
+  { email: 'zakaria.nouh@example.com', password: '123456', name: 'Zakaria', surname: 'Nouh' },
+  { email: 'karim.alaoui@example.com', password: '123456', name: 'Karim', surname: 'Alaoui' },
+  { email: 'nadia.rachid@example.com', password: '123456', name: 'Nadia', surname: 'Rachid' },
+  { email: 'youssef.karim@example.com', password: '123456', name: 'Youssef', surname: 'Karim' }
 ]
 
 users = User.create!(users)

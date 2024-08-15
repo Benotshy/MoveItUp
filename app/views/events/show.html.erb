@@ -1,4 +1,28 @@
-<div id="mainID">
+<div id="mainID" data-controller="popup">
+<div class="event-participants">
+  <% if current_user == @event.user %>
+    <h3 class="list-heading">Pending Participants</h3>
+    <ul class="participant-list">
+      <% @event.participations.where(status: 'pending').each do |participation| %>
+        <li id="participation-<%= participation.id %>" class="participant-item">
+          <span><%= participation.user.name %> <%= participation.user.surname %></span>
+
+          <!-- Approve Form -->
+          <%= form_with url: approve_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
+            <button type="submit" class="accept-button"><i class="fa fa-check"></i></button>
+          <% end %>
+
+          <!-- Reject Form -->
+          <%= form_with url: reject_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
+            <button type="submit" class="decline-button"><i class="fa fa-times"></i></button>
+          <% end %>
+
+        </li>
+      <% end %>
+    </ul>
+
+  <% end %>
+</div>
   <div class="container">
     <div class="event-header">
       < <% if @event.type_id == 1 %>
@@ -79,43 +103,10 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Are you sure you want to participate in this event?</h2>
-    <%= form_with url: participate_event_path, method: :post, local: true, id: 'participate-form' do %>
-      <%= hidden_field_tag :event_id, nil %>
-      <button type="submit" class="btn btn-success">Yes, I'm sure</button>
-      <button type="button" class="btn btn-danger" id="cancel-participation">No, Cancel</button>
-    <% end %>
+    <%= form_with url: participations_path(event_id: @event.id), method: :post, local: true, id: 'participate-form' do %>
+  <%= hidden_field_tag :event_id, @event.id %>
+  <button type="submit" class="btn btn-success">Yes, I'm sure</button>
+  <button type="button" class="btn btn-danger" id="cancel-participation">No, Cancel</button>
+<% end %>
   </div>
 </div>
-
-<!-- JavaScript for Modal Handling -->
-<script>
- document.addEventListener('turbo:load', () => {
-  const modal = document.getElementById('participation-modal');
-  const participateButton = document.getElementById('participate-button');
-  const closeModal = document.querySelector('.modal .close');
-  const cancelParticipation = document.getElementById('cancel-participation');
-  const participateForm = document.getElementById('participate-form');
-  if (participateButton) {
-    participateButton.addEventListener('click', () => {
-      const eventId = participateButton.getAttribute('data-event-id');
-      participateForm.querySelector('input[name="event_id"]').value = eventId;
-      modal.style.display = 'block';
-    });
-  }
-  if (closeModal) {
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-  }
-  if (cancelParticipation) {
-    cancelParticipation.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-  }
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-});
-</script>
