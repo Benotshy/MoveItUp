@@ -1,24 +1,25 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root 'pages#home'
 
   resources :events do
+    resources :participations, only: [:create] do
+      # member do
+      #   patch :approve
+      #   patch :decline
+      #   patch :reject
+      # end
+    end
+  end
+
+  resources :participations, only: [:create] do
     member do
-      post :participate
+      patch 'approve'
+      patch 'reject'
     end
-  end
-  
-  resources :participations, only: [] do
     collection do
-      get :pending
+      get 'pending', as: 'pending'
     end
+
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end
