@@ -3,19 +3,23 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :events do
-    member do
-      get 'manage_participants'
+    resources :participations, only: [:create] do
+      # member do
+      #   patch :approve
+      #   patch :decline
+      #   patch :reject
+      # end
     end
   end
 
   resources :participations, only: [:create] do
-    collection do
-      get 'pending'
-    end
-
     member do
       patch 'approve'
       patch 'reject'
     end
+    collection do
+      get 'pending', as: 'pending'
+    end
+
   end
 end

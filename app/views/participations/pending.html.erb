@@ -4,7 +4,7 @@
   </div>
 
   <div class="pending-content">
-    <% if !@pending_participations.blank? && @pending_participations.any? %>
+    <% if @pending_participations.present? %>
       <ul class="pending-list">
         <% @pending_participations.each do |participation| %>
           <li class="pending-item">

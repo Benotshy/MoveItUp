@@ -1,34 +1,51 @@
 # app/controllers/participations_controller.rb
 class ParticipationsController < ApplicationController
+  # Ensure the user is authenticated for all actions except 'pending'
+  before_action :authenticate_user!
+  before_action :set_participation, only: [:approve, :decline, :reject]
 
-  # Other actions ...
-
-  def accept
-    @participation.update(status: 'accepted')
-    redirect_to event_path(@participation.event)
+  def approve
+      if @participation.update(status: 'approved')
+        redirect_to event_path(@participation.event), notice: 'Participation approved.'
+      else
+        redirect_to event_path(@participation.event), alert: 'Failed to approve participation.'
+         # This will look for a file named `approve.js.erb`
+      end
   end
 
   def decline
-    @participation.update(status: 'declined')
-    redirect_to event_path(@participation.event)
+      if @participation.update(status: 'declined')
+        redirect_to event_path(@participation.event), notice: 'Participation request declined.'
+      else
+         redirect_to event_path(@participation.event), alert: 'Failed to decline participation.'
+      end
   end
 
   def create
-    event = Event.find(params[:event_id])
-    participants_ids = Participation.pluck(:user_id)
-    message ="You already are participating to this event!"
-    if !participants_ids.include?(current_user.id)
-      Participation.create!(user_id: current_user.id , event_id: event.id)
-      message = "Participation has been confirmed"
+    @event = Event.find(params[:event_id])
+    @participation = @event.participations.create(user: current_user, status: 'pending')
+
+    if @participation.save
+      redirect_to pending_participations_path, notice: 'You have successfully requested to participate in the event.'
+    else
+      redirect_to @event, alert: 'Failed to request participation.'
     end
-    redirect_to  pending_participations_path(event_id: event.id), notice: message
-
-
   end
 
   def pending
-    @event = Event.find(params[:event_id])
-    @pending_participations = @event.participations.where(status: 'pending')
+    @pending_participations = current_user.participations
+  end
+
+  def reject
+    respond_to do |format|
+      if @participation.update(status: 'rejected')
+        format.html { redirect_to @participation.event, notice: 'Participation rejected.' }
+        format.js   # This will look for a file named `reject.js.erb`
+      else
+        format.html { redirect_to @participation.event, alert: 'Failed to reject participation.' }
+        format.js   # This will look for a file named `reject.js.erb`
+      end
+    end
   end
 
   private
