@@ -59,7 +59,7 @@ events = [
     city: "Tangier",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[3].id
+    type_id: 3
   },
   {
     date: DateTime.new(2024, 8, 20, 21, 00),
@@ -71,7 +71,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[3].id,
-    type_id: types[2].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 10, 1, 10, 00),
@@ -83,7 +83,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[4].id,
-    type_id: types[2].id
+    type_id: 3
   },
   {
     date: DateTime.new(2024, 8, 25, 19, 00),
@@ -95,7 +95,7 @@ events = [
     city: "Casablanca",
     visibility: true,
     user_id: users[1].id,
-    type_id: types[0].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 9, 12, 16, 00),
@@ -107,7 +107,7 @@ events = [
     city: "Agadir",
     visibility: true,
     user_id: users[3].id,
-    type_id: types[5].id
+    type_id: 5
   },
   {
     date: DateTime.new(2024, 9, 18, 20, 00),
@@ -119,7 +119,7 @@ events = [
     city: "Casablanca",
     visibility: true,
     user_id: users[1].id,
-    type_id: types[1].id
+    type_id: 2
   },
   {
     date: DateTime.new(2024, 10, 5, 8, 00),
@@ -131,7 +131,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[4].id,
-    type_id: types[3].id
+    type_id: 4
   },
   {
     date: DateTime.new(2024, 9, 20, 9, 00),
@@ -143,7 +143,7 @@ events = [
     city: "Rabat",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[5].id
+    type_id: 6
   },
   {
     date: DateTime.new(2024, 8, 28, 14, 00),
@@ -155,7 +155,7 @@ events = [
     city: "Fes",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[4].id
+    type_id: 5
   },
   {
     date: DateTime.new(2024, 9, 25, 17, 00),
@@ -167,7 +167,7 @@ events = [
     city: "Rabat",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[0].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 10, 10, 19, 00),
@@ -179,7 +179,7 @@ events = [
     city: "Essaouira",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[2].id
+    type_id: 3
   },
   {
     date: DateTime.new(2024, 8, 15, 18, 00),
@@ -191,7 +191,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[3].id
+    type_id: 4
   },
   {
     date: DateTime.new(2024, 9, 29, 20, 00),
@@ -203,7 +203,7 @@ events = [
     city: "Essaouira",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[0].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 10, 15, 15, 00),
@@ -215,7 +215,7 @@ events = [
     city: "Tangier",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[3].id
+    type_id: 4
   },
   {
     date: DateTime.new(2024, 8, 22, 20, 00),
@@ -227,7 +227,7 @@ events = [
     city: "Agadir",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[0].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 9, 5, 17, 00),
@@ -239,7 +239,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[4].id
+    type_id: 5
   },
   {
     date: DateTime.new(2024, 9, 18, 18, 00),
@@ -251,7 +251,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[2].id
+    type_id: 3
   },
   {
     date: DateTime.new(2024, 10, 12, 12, 00),
@@ -263,7 +263,7 @@ events = [
     city: "Tangier",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[5].id
+    type_id: 6
   },
   {
     date: DateTime.new(2024, 8, 27, 19, 00),
@@ -275,7 +275,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[2].id
+    type_id: 3
   },
   {
     date: DateTime.new(2024, 9, 11, 20, 00),
@@ -287,7 +287,7 @@ events = [
     city: "Rabat",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[0].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 9, 7, 9, 00),
@@ -299,7 +299,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[3].id
+    type_id: 4
   },
   {
     date: DateTime.new(2024, 8, 30, 18, 00),
@@ -311,7 +311,7 @@ events = [
     city: "Tangier",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[5].id
+    type_id: 6
   },
   {
     date: DateTime.new(2024, 9, 23, 21, 00),
@@ -323,7 +323,7 @@ events = [
     city: "Essaouira",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[5].id
+    type_id: 6
   },
   {
     date: DateTime.new(2024, 8, 26, 10, 00),
@@ -335,7 +335,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[2].id
+    type_id: 5
   },
   {
     date: DateTime.new(2024, 9, 16, 18, 00),
@@ -347,7 +347,7 @@ events = [
     city: "Casablanca",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[1].id
+    type_id: 4
   },
   {
     date: DateTime.new(2024, 10, 3, 9, 00),
@@ -359,7 +359,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[1].id,
-    type_id: types[5].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 8, 18, 20, 00),
@@ -371,7 +371,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[1].id
+    type_id: 2
   },
   {
     date: DateTime.new(2024, 9, 21, 15, 00),
@@ -383,7 +383,7 @@ events = [
     city: "Rabat",
     visibility: true,
     user_id: users[2].id,
-    type_id: types[0].id
+    type_id: 1
   },
   {
     date: DateTime.new(2024, 9, 10, 19, 00),
@@ -395,7 +395,7 @@ events = [
     city: "Marrakech",
     visibility: true,
     user_id: users[1].id,
-    type_id: types[0].id
+    type_id: 2
   },
   {
     date: DateTime.new(2024, 10, 8, 16, 00),
@@ -407,7 +407,7 @@ events = [
     city: "Rabat",
     visibility: true,
     user_id: users[0].id,
-    type_id: types[4].id
+    type_id: 4
   }
 ]
 

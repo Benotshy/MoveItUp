@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_event, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  
+# SEARCH QURY CODE IMPORTANT
   def index
     @events = Event.where(visibility: true).bonzo(params[:page]).per(6)
     if params[:query].present?
