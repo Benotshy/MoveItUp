@@ -6,7 +6,12 @@ color: #5D666F;
 footer {
   background-color: #FEFAFA;
   margin-top: 50px;
-  color: red;
+  bottom: 0;
+  width: 90%;
+}
+
+footer p, footer li, footer a, footer h5{
+  color: #000000;
 }
 /* Adjust icon sizes */
 footer .fab {
@@ -25,6 +30,17 @@ footer .copyright {
   padding-bottom: 10px;
 }
 .list-unstyled{
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  align-items: center;
+}
+
+.btn-footer {
+  background-color: #025956;
 }

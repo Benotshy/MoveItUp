@@ -168,6 +168,7 @@
     margin: auto;
     text-align: center;
     padding-top: 30px;
+    margin-bottom: 50px;
   }
 
   .cities-col {
@@ -227,14 +228,16 @@
   justify-content: center;
 }
 
+.reviews-section .review-card{
+  padding: 30px;
+}
+
 .review-card {
   background-color: #fefafa;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
-  padding-bottom: 20px;
-  padding-top: 10px;
 }
 
 blockquote {
@@ -250,21 +253,23 @@ blockquote::before {
   color: #ee5a36;
   position: absolute;
   left: 0;
-  top: 0;
+  top: -1rem;
 }
 
 .reviewer-info {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-left: 20px;
+  justify-content: space-around;
+  width: 80%;
 }
 
 .reviewer-info img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-left: 10px;
   object-fit: cover;
 }
 
@@ -289,7 +294,8 @@ blockquote::before {
   text-align: center;
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 .partners img {
