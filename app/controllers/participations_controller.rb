@@ -5,20 +5,19 @@ class ParticipationsController < ApplicationController
   before_action :set_participation, only: [:approve, :decline, :reject]
 
   def approve
-      if @participation.update(status: 'approved')
-        redirect_to event_path(@participation.event), notice: 'Participation approved.'
-      else
-        redirect_to event_path(@participation.event), alert: 'Failed to approve participation.'
-         # This will look for a file named `approve.js.erb`
-      end
+    if @participation.update(status: 'approved')
+      redirect_to event_path(@participation.event), notice: 'Participation approved.'
+    else
+      redirect_to event_path(@participation.event), alert: 'Failed to approve participation.'
+    end
   end
 
   def decline
-      if @participation.update(status: 'declined')
-        redirect_to event_path(@participation.event), notice: 'Participation request declined.'
-      else
-         redirect_to event_path(@participation.event), alert: 'Failed to decline participation.'
-      end
+    if @participation.update(status: 'declined')
+      redirect_to event_path(@participation.event), notice: 'Participation request declined.'
+    else
+      redirect_to event_path(@participation.event), alert: 'Failed to decline participation.'
+    end
   end
 
   def create
@@ -37,14 +36,10 @@ class ParticipationsController < ApplicationController
   end
 
   def reject
-    respond_to do |format|
-      if @participation.update(status: 'rejected')
-        format.html { redirect_to @participation.event, notice: 'Participation rejected.' }
-        format.js   # This will look for a file named `reject.js.erb`
-      else
-        format.html { redirect_to @participation.event, alert: 'Failed to reject participation.' }
-        format.js   # This will look for a file named `reject.js.erb`
-      end
+    if @participation.update(status: 'rejected')
+      redirect_to @participation.event, notice: 'Participation rejected.'
+    else
+      redirect_to @participation.event, alert: 'Failed to reject participation.'
     end
   end
 
