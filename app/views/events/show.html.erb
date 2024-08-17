@@ -1,45 +1,44 @@
 <div id="mainID" data-controller="popup">
-<div class="event-participants">
-  <% if current_user == @event.user %>
-    <h3 class="list-heading">Pending Participants</h3>
-    <ul class="participant-list">
-      <% @event.participations.where(status: 'pending').each do |participation| %>
-        <li id="participation-<%= participation.id %>" class="participant-item">
-          <span><%= participation.user.name %> <%= participation.user.surname %></span>
+  <div class="event-participants">
+    <% if current_user == @event.user %>
+      <h3 class="list-heading">Pending Participants</h3>
+      <ul class="participant-list">
+        <% @event.participations.where(status: 'pending').each do |participation| %>
+          <li id="participation-<%= participation.id %>" class="participant-item">
+            <span><%= participation.user.name %> <%= participation.user.surname %></span>
 
-          <!-- Approve Form -->
-          <%= form_with url: approve_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
-            <button type="submit" class="accept-button"><i class="fa fa-check"></i></button>
-          <% end %>
+            <!-- Approve Form -->
+            <%= form_with url: approve_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
+              <button type="submit" class="accept-button"><i class="fa fa-check"></i></button>
+            <% end %>
 
-          <!-- Reject Form -->
-          <%= form_with url: reject_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
-            <button type="submit" class="decline-button"><i class="fa fa-times"></i></button>
-          <% end %>
+            <!-- Reject Form -->
+            <%= form_with url: reject_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
+              <button type="submit" class="decline-button"><i class="fa fa-times"></i></button>
+            <% end %>
 
-        </li>
-      <% end %>
-    </ul>
-
-  <% end %>
-</div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
   <div class="container">
     <div class="event-header">
-      < <% if @event.type_id == 1 %>
-            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
-          <% elsif @event.type_id == 3 %>
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
-          <% elsif @event.type_id == 6 %>
-            <img src="https://images.unsplash.com/photo-1550096141-7263640aa48c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGNvbW11bml0eXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
-          <% elsif @event.type_id == 5 %>
-            <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHdvcmtzaG9wfGVufDB8fDB8fHwy" class="event-image">
-          <% elsif @event.type_id == 4 %>
-            <img src="https://images.unsplash.com/photo-1639763703351-c27defbb51b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHwy" class="event-image">
-          <% elsif @event.type_id == 2 %>
-            <img src="https://images.unsplash.com/photo-1683117855296-979f17e62e87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  class="event-image">
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="event-image">
-          <% end %>
+      <% if @event.type_id == 1 %>
+        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
+      <% elsif @event.type_id == 3 %>
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
+      <% elsif @event.type_id == 6 %>
+        <img src="https://images.unsplash.com/photo-1550096141-7263640aa48c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGNvbW11bml0eXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
+      <% elsif @event.type_id == 5 %>
+        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHdvcmtzaG9wfGVufDB8fDB8fHwy" class="event-image">
+      <% elsif @event.type_id == 4 %>
+        <img src="https://images.unsplash.com/photo-1639763703351-c27defbb51b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHwy" class="event-image">
+      <% elsif @event.type_id == 2 %>
+        <img src="https://images.unsplash.com/photo-1683117855296-979f17e62e87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  class="event-image">
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="event-image">
+      <% end %>
 
       <div class="event-details">
         <h1 class="event-title"><%= @event.title %></h1>
@@ -68,6 +67,7 @@
           </button>
         </div>
       </div>
+
     </div>
 
     <div class="event-description">
@@ -96,7 +96,6 @@
       <%= button_to "<i class='fas fa-trash'></i> Destroy this event".html_safe, @event, method: :delete, class: 'action-link delete-link' %>
     </div>
   </div>
-</div>
 
 <!-- Pop-Up Modal -->
 <div id="participation-modal" class="modal">
@@ -104,9 +103,11 @@
     <span class="close">&times;</span>
     <h2>Are you sure you want to participate in this event?</h2>
     <%= form_with url: participations_path(event_id: @event.id), method: :post, local: true, id: 'participate-form' do %>
-  <%= hidden_field_tag :event_id, @event.id %>
-  <button type="submit" class="btn btn-success">Yes, I'm sure</button>
-  <button type="button" class="btn btn-danger" id="cancel-participation">No, Cancel</button>
-<% end %>
+      <%= hidden_field_tag :event_id, @event.id %>
+      <button type="submit" class="btn btn-success">Yes, I'm sure</button>
+      <button type="button" class="btn btn-danger" id="cancel-participation">No, Cancel</button>
+    <% end %>
   </div>
+</div>
+
 </div>
