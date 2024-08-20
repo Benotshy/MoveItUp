@@ -1,36 +1,65 @@
-form {
-  margin:0 auto;
-  width:600px;
-  padding:14px;
+/* Container for the form */
+.form-container {
+  width: 1100px; /* Increased width to accommodate two columns */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input[type=text] {
-  padding:5px;
-  border:2px solid #ccc;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+/* Input fields container */
+.form-inputs {
+  display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap if needed */
+  gap: 20px; /* Gap between columns */
 }
 
-input[type=text]:focus {
-  border-color:#333;
+/* Column styling */
+.form-column {
+  flex: 1;
+  min-width: calc(50% - 20px); /* 50% width minus gap */
 }
 
-input[type=submit] {
-  padding:5px 15px;
-  background: #025956;
-  color: white;
-  border:0 none;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+/* Inputs and labels */
+.form-inputs input,
+.form-inputs select,
+.form-inputs textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
-.form-btn {
-  padding:5px 15px;
-  background: #025956;
-  color: white;
-  border:0 none;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+.form-inputs textarea {
+  resize: vertical;
+}
+
+/* Labels for input fields */
+.form-inputs label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Submit button */
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  background-color: #025956; /* Use your theme color */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #014d42; /* Darker shade for hover effect */
 }

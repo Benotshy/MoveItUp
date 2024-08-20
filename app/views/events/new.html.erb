@@ -1,10 +1,16 @@
+<div id="mainformCreate">
 <div class="container"><center><h1>Create your event</h1></center>
 
 <%= render "form", event: @event %>
 
 <br>
 
-<div><center>
-  <%= link_to "Back to events", events_path %></center>
+<div class="back-link-container">
+  <%= link_to events_path, class: 'back-link' do %>
+  <span>
+  <i class="fas fa-arrow-left"></i> Back to events
+  </span>
+
+  <% end %>
 </div>
 </div>
