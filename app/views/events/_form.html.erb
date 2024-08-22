@@ -1,20 +1,25 @@
-<div class="container">
-<%= simple_form_for(@event) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="form-container">
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :city %>
-    <%= f.input :address %>
-    <%= f.input :capacity %>
-    <%= f.input :date %>
-    <%= f.input :type_id,as: :select, collection: @types%>
-  </div>
+    <div class="form-inputs">
+      <div class="form-column">
+        <%= f.input :title, label: 'Event Title' %>
+        <%= f.input :description, label: 'Event Description' %>
+        <%= f.input :city, label: 'City' %>
+        <%= f.input :address, label: 'Address' %>
+      </div>
+      <div class="form-column">
+        <%= f.input :capacity, label: 'Capacity' %>
+        <%= f.input :date, label: 'Event Date' %>
+        <%= f.input :price, label: 'Price' %>
+        <%= f.input :type_id, as: :select, collection: @types, label: 'Event Type' %>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, class: 'btn-submit' %>
+    </div>
+  <% end %>
 </div>

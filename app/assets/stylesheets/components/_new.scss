@@ -1,0 +1,109 @@
+#loginFormContainer {
+  /* Apply styles as needed */
+}
+
+.login_form_title {
+  text-align: center;
+  font-size: 2rem;
+  color: #025956;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.login_form_container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login_form_inputs {
+  margin-bottom: 15px;
+}
+
+.login_input_field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.login_input_field:focus {
+  border-color: #025956;
+  box-shadow: 0 0 5px rgba(2, 89, 86, 0.5);
+}
+
+.login_remember_checkbox {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.login_form_actions {
+  text-align: center;
+}
+
+.login_submit_button {
+  background-color: #025956;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login_submit_button:hover {
+  background-color: #EE5A36;
+}
+
+.login_form_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.login_form_links a {
+  color: #025956;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  font-size: 12px;
+}
+
+.login_form_links a:hover {
+  color: #EE5A36;
+}
+
+.login_separator {
+  color: #888;
+}
+
+/* Container for the back link */
+.back_link_container {
+  text-align: center;
+  margin-top: 20px; /* Adjust spacing as needed */
+}
+
+/* Styling for the back link */
+.back_link {
+  color: #EE5A36; /* Text color */
+  text-decoration: underline; /* Underline text */
+  font-size: 16px; /* Adjust font size as needed */
+  font-weight: 550; /* Optional: Make text bold */
+  display: inline-flex; /* Align icon and text horizontally */
+  align-items: center; /* Center icon and text vertically */
+  gap: 8px; /* Space between icon and text */
+}
+
+/* Styling for the icon */
+.back_link i {
+  font-size: 20px; /* Adjust icon size as needed */
+  text-decoration: none !important;
+}

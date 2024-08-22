@@ -1,46 +1,82 @@
-footer .list-unstyled a {
-font-size: 0.9rem;
-color: #5D666F;
+.footer {
+  background-color: #fefafa; /* Adjust background color if needed */
+  padding: 0; /* Remove extra padding */
+  margin-top: 100px;
 }
 
-footer {
-  background-color: #FEFAFA;
-  margin-top: 50px;
-  bottom: 0;
-  width: 90%;
-}
-
-footer p, footer li, footer a, footer h5{
-  color: #000000;
-}
-/* Adjust icon sizes */
-footer .fab {
-  font-size: 1.3rem;
-}
-
-/* Add hover effect to social icons */
-footer .fab:hover {
-  color: #000000; /* Changes color on hover */
-  opacity: 0.8; /* Slightly dim the icon on hover */
-}
-
-/* Custom padding for the copyright section */
-footer .copyright {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.list-unstyled{
-  font-size: 16px;
-  line-height: 1.5rem;
-}
-
-.footer-container {
+.footer-content {
   display: flex;
-  flex-direction: column;
-  width:100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px; /* Adjust padding if needed */
+}
+.btn{
+  background-color: #025956;
+  color: white;
+}
+.btn:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px; /* Adjust margin if needed */
+}
+
+.footer-section img {
+  max-width: 100px;
+  height: auto;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem; /* Adjust spacing between list items */
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #000; /* Adjust link color */
+}
+
+.footer-section a:hover {
+  color: #007bff; /* Adjust link hover color */
+}
+
+.footer-section form {
+  display: flex;
   align-items: center;
 }
 
-.btn-footer {
-  background-color: #025956;
+.footer-section form input {
+  margin-right: 10px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.449);
+  width: 325px;
+  height: 35px; /* Space between input and button */
+}
+
+.footer-section .social-icons a {
+  margin-right: 10px; /* Space between icons */
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px; /* Adjust padding if needed */
+  border-top: 1px solid #dee2e6; /* Divider line */
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #000; /* Adjust link color */
+}
+
+.footer-bottom a:hover {
+  color: #007bff; /* Adjust link hover color */
 }

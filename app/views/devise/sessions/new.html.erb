@@ -1,20 +1,26 @@
-<h2>Log in</h2>
+<div id="loginFormContainer">
+  <h2 class="login_form_title">Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login_form_container" }) do |f| %>
+    <div class="login_form_inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: "login_input_field" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password", class: "login_input_field" } %>
+      <%= f.input :remember_me, as: :boolean, wrapper_html: { class: "login_remember_checkbox" } if devise_mapping.rememberable? %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+    <div class="login_form_actions">
+      <%= f.button :submit, "Log in", class: "login_submit_button" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="login_form_links">
+      <a href="<%= new_user_registration_path %>">Sign up</a>
+      <span class="login_separator">|</span>
+      <a href="<%= new_user_password_path %>">Forgot my password</a>
+    </div>
+  <% end %>
+</div>

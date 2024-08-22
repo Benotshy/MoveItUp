@@ -24,21 +24,21 @@
   </div>
   <div class="container">
     <div class="event-header">
-      <% if @event.type_id == 1 %>
-        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
-      <% elsif @event.type_id == 3 %>
-        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
-      <% elsif @event.type_id == 6 %>
-        <img src="https://images.unsplash.com/photo-1550096141-7263640aa48c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGNvbW11bml0eXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
-      <% elsif @event.type_id == 5 %>
-        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHdvcmtzaG9wfGVufDB8fDB8fHwy" class="event-image">
-      <% elsif @event.type_id == 4 %>
-        <img src="https://images.unsplash.com/photo-1639763703351-c27defbb51b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHwy" class="event-image">
-      <% elsif @event.type_id == 2 %>
-        <img src="https://images.unsplash.com/photo-1683117855296-979f17e62e87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  class="event-image">
-      <% else %>
-        <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="event-image">
-      <% end %>
+          <% if @event.type_id == 1 %>
+            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
+          <% elsif @event.type_id == 3 %>
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
+          <% elsif @event.type_id == 6 %>
+            <img src="https://images.unsplash.com/photo-1550096141-7263640aa48c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGNvbW11bml0eXxlbnwwfHwwfHx8Mg%3D%3D" class="event-image">
+          <% elsif @event.type_id == 5 %>
+            <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHdvcmtzaG9wfGVufDB8fDB8fHwy" class="event-image">
+          <% elsif @event.type_id == 4 %>
+            <img src="https://images.unsplash.com/photo-1639763703351-c27defbb51b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG91ciUyMGd1aWRlfGVufDB8fDB8fHwy" class="event-image">
+          <% elsif @event.type_id == 2 %>
+            <img src="https://images.unsplash.com/photo-1683117855296-979f17e62e87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  class="event-image">
+          <% else %>
+            <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="event-image">
+          <% end %>
 
       <div class="event-details">
         <h1 class="event-title"><%= @event.title %></h1>

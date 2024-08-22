@@ -3,17 +3,25 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
 # SEARCH QURY CODE IMPORTANT
-  def index
-    @events = Event.where(visibility: true).bonzo(params[:page]).per(6)
-    if params[:query].present?
-      sql_subquery = <<~SQL
-        events.title ILIKE :query
-        OR events.description ILIKE :query
-        OR types.name ILIKE :query
-      SQL
-      @events = @events.joins(:type).where(sql_subquery, query: "%#{params[:query]}%")
-    end
+def index
+  @events = Event.where(visibility: true).bonzo(params[:page]).per(6)
+
+  # Filtering by search query
+  if params[:query].present?
+    sql_subquery = <<~SQL
+      events.title ILIKE :query
+      OR events.description ILIKE :query
+      OR types.name ILIKE :query
+    SQL
+    @events = @events.joins(:type).where(sql_subquery, query: "%#{params[:query]}%")
   end
+
+  # Filtering by city
+  if params[:city].present? && params[:city] != "All"
+    @events = @events.where(city: params[:city])
+  end
+end
+
 
   def show
     if current_user == @event.user
