@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     collection do
       get 'pending', as: 'pending'
     end
-
   end
+
+
+resources :users, only: [:show]
 end

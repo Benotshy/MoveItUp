@@ -1,10 +1,27 @@
 <center>
-<h2 class="signup-title">Sign up</h2>
+  <h2 class="signup-title">Sign up</h2>
 </center>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-form' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs-container">
+    <%= f.input :name,
+                required: true,
+                input_html: { autocomplete: "name", class: 'form-input' } %>
+    <%= f.input :surname,
+                required: true,
+                input_html: { autocomplete: "surname", class: 'form-input' } %>
+    <%= f.input :city,
+                required: true,
+                input_html: { autocomplete: "address-level2", class: 'form-input' } %>
+    <%= f.input :date_of_birth,
+                as: :date,
+                required: true,
+                input_html: { class: 'form-input' } %>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "tel", class: 'form-input' } %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -17,13 +34,14 @@
                 required: true,
                 input_html: { autocomplete: "new-password", class: 'form-input' } %>
   </div>
-<center>
-  <div class="form-actions-container">
-    <%= f.button :submit, "Sign up", class: 'submit-button' %>
-  </div>
-  <br>
+
+  <center>
+    <div class="form-actions-container">
+      <%= f.button :submit, "Sign up", class: 'submit-button' %>
+    </div>
+    <br>
+  </center>
 
 <% end %>
 
 <%= render "devise/shared/links" %>
-</center>

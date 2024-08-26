@@ -1,27 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-
 #indexpage {
   width: 100%;
-
   /* Container for Cards */
   .container {
     margin-top: 70px;
     padding: 0; /* Remove container padding */
   }
-
   .row {
     display: flex;
     justify-content: center; /* Center the cards horizontally */
     flex-wrap: wrap;
     margin-left: auto; /* Center content */
     margin-right: auto; /* Center content */
+    gap: 10px; /* Adds consistent spacing between items */
   }
-
   .col-md-4 {
     padding-left: 5px; /* Reduce left padding */
     padding-right: 5px; /* Reduce right padding */
+    flex: 1 1 30%; /* Ensures a maximum of 3 cards per row on larger screens */
+    max-width: 350px; /* Maximum width for each card */
   }
-
   /* Banner Image */
   .banner-imageIndex {
     width: 100%;
@@ -32,7 +30,6 @@
     background-repeat: no-repeat; /* Prevents image from repeating */
     margin-bottom: 32px;
   }
-
   /* Main Title */
   .main-tittle {
     display: flex;
@@ -48,7 +45,6 @@
     padding: 10px;
     border-radius: 5px;
   }
-
   /* Card Styling */
   .card {
     border: none;
@@ -60,12 +56,10 @@
     max-width: 350px;
     margin-bottom: 15px; /* Space between rows */
   }
-
   .card:hover {
     transform: translateY(-5px);
     cursor: pointer;
   }
-
   .card img {
     width: 100%;
     height: 120px;
@@ -73,25 +67,21 @@
     border-bottom: none;
     cursor: pointer;
   }
-
   .card-body {
     padding: 15px;
   }
-
   .card-title {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     color: #025956;
     font-weight: bold;
   }
-
   .card-text {
     font-size: 0.8rem;
     color: #555;
     line-height: 1.4;
     margin-bottom: 0;
   }
-
   /* Card Footer Styling */
   .card-footer {
     background-color: transparent;
@@ -100,7 +90,6 @@
     font-size: 0.9rem;
     color: #555;
   }
-
   .card-footer .price {
     font-size: 0.9rem;
     color: #025956;
@@ -108,12 +97,11 @@
     display: block;
     margin-bottom: 10px;
   }
-
   .card-footer .btn-primary {
-    background-color: #023e40;
+    background-color: #023E40;
     transition: background-color 0.2s;
     display: block;
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: 200;
     letter-spacing: 0.5px;
@@ -122,14 +110,12 @@
     border: none; /* Remove default border */
     border-radius: 4px; /* Rounded corners for button */
   }
-
   .card-footer .btn-primary:hover {
-    background-color: #022c34; /* Slightly darker shade for hover */
-    border-color: #023e40;
+    background-color: #022C34; /* Slightly darker shade for hover */
+    border-color: #023E40;
     box-shadow: 0 0 15px 5px rgba(252, 252, 252, 0.7); /* Illumination effect */
     color: #fff;
   }
-
   .card-footer .date {
     position: absolute;
     top: 10px;
@@ -138,7 +124,6 @@
     font-weight: bold;
     color: #025956;
   }
-
   .card .icon {
     position: absolute;
     top: 10px;
@@ -146,15 +131,13 @@
     color: #025956;
     font-size: 1rem;
   }
-
   .card .heart-icon {
     position: absolute;
     top: 10px;
     right: 35px;
-    color: #e74c3c;
+    color: #E74C3C;
     font-size: 1rem;
   }
-
   /* Second Title */
   .second-title {
     font-size: 22px;
@@ -165,7 +148,6 @@
     animation: fade-in 3s ease-in-out;
     font-weight: 550;
   }
-
   /* City Dropdown */
   .city-dropdown {
     display: flex;
@@ -173,123 +155,107 @@
     justify-content: center;
     margin: 1rem 0;
     padding: 0.5rem;
-    background-color: #fffafb; /* Light background color for contrast */
+    background-color: #FFFAFB; /* Light background color for contrast */
     border-radius: 5px; /* Slightly rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
-
     form {
       display: flex;
       align-items: center;
       gap: 0.5rem; /* Space between label and select */
     }
-
     label {
       font-size: 1rem;
       color: #333; /* Darker text color for readability */
     }
-
     select {
       padding: 0.5rem;
       border: 1px solid #ccc; /* Light border for the dropdown */
       border-radius: 4px; /* Slightly rounded corners */
       font-size: 1rem;
-      background-color: #fffafb; /* White background for the dropdown */
+      background-color: #FFFAFB; /* White background for the dropdown */
       cursor: pointer; /* Pointer cursor for dropdown */
       transition: border-color 0.3s; /* Smooth border color transition */
     }
-
     select:focus {
       border-color: #025956; /* Change border color on focus */
       outline: none; /* Remove default outline */
     }
   }
-
   /* Media Queries for Responsive Design */
+  @media (max-width: 1024px) {
+    .col-md-4 {
+      flex: 1 1 45%; /* Two cards per row on medium screens */
+    }
+  }
   @media (max-width: 768px) {
     .banner-imageIndex {
       height: 300px;
     }
-
     .main-tittle {
       font-size: 1.5rem;
       height: auto;
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
     }
-
     .card {
       max-width: 90%;
     }
-
     .card img {
       height: 100px;
     }
-
     .card-title {
       font-size: 0.9rem;
     }
-
     .card-text {
       font-size: 0.75rem;
     }
-
     .card-footer .btn-primary {
       font-size: 14px;
     }
-
     .second-title {
       font-size: 18px;
     }
-
     .city-dropdown label {
       font-size: 1rem;
     }
-
     .city-dropdown select {
       font-size: 0.9rem;
     }
+    .col-md-4 {
+      flex: 1 1 90%; /* One card per row on smaller screens */
+    }
   }
-
   @media (max-width: 576px) {
     .banner-imageIndex {
       height: 250px;
     }
-
     .main-tittle {
       font-size: 1.2rem;
       height: auto;
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
-
     .card {
       max-width: 100%;
     }
-
     .card img {
       height: 80px;
     }
-
     .card-title {
       font-size: 0.8rem;
     }
-
     .card-text {
       font-size: 0.7rem;
     }
-
     .card-footer .btn-primary {
       font-size: 12px;
     }
-
     .second-title {
       font-size: 16px;
     }
-
     .city-dropdown label {
       font-size: 0.9rem;
     }
-
     .city-dropdown select {
       font-size: 0.8rem;
     }
