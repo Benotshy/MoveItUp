@@ -1,0 +1,71 @@
+.user-profile-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.user-avatar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar .avatar-round {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.user-info {
+  text-align: center;
+}
+
+.user-info h1 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.user-info h2 {
+  background: #ffa500;
+  color: white;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.user-info h3 {
+  color: #777;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.user-details p {
+  margin: 5px 0;
+}
+
+.about-me {
+  margin-top: 20px;
+}
+
+.about-me h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #ffa500;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #ff8c00;
+}
