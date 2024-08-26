@@ -15,11 +15,14 @@
     flex-wrap: wrap;
     margin-left: auto; /* Center content */
     margin-right: auto; /* Center content */
+    gap: 10px; /* Adds consistent spacing between items */
   }
 
   .col-md-4 {
     padding-left: 5px; /* Reduce left padding */
     padding-right: 5px; /* Reduce right padding */
+    flex: 1 1 30%; /* Ensures a maximum of 3 cards per row on larger screens */
+    max-width: 350px; /* Maximum width for each card */
   }
 
   /* Banner Image */
@@ -205,6 +208,12 @@
   }
 
   /* Media Queries for Responsive Design */
+  @media (max-width: 1024px) {
+    .col-md-4 {
+      flex: 1 1 45%; /* Two cards per row on medium screens */
+    }
+  }
+
   @media (max-width: 768px) {
     .banner-imageIndex {
       height: 300px;
@@ -247,6 +256,10 @@
 
     .city-dropdown select {
       font-size: 0.9rem;
+    }
+
+    .col-md-4 {
+      flex: 1 1 90%; /* One card per row on smaller screens */
     }
   }
 
