@@ -1,27 +1,27 @@
 <div id="mainID" data-controller="popup">
+  <% if current_user == @event.user %>
   <div class="event-participants">
-    <% if current_user == @event.user %>
-      <h3 class="list-heading">Pending Participants</h3>
-      <ul class="participant-list">
-        <% @event.participations.where(status: 'pending').each do |participation| %>
-          <li id="participation-<%= participation.id %>" class="participant-item">
-            <span><%= participation.user.name %> <%= participation.user.surname %></span>
+    <h3 class="list-heading">Pending Participants</h3>
+    <ul class="participant-list">
+      <% @event.participations.where(status: 'pending').each do |participation| %>
+        <li id="participation-<%= participation.id %>" class="participant-item">
+          <span><%= participation.user.name %> <%= participation.user.surname %></span>
 
-            <!-- Approve Form -->
-            <%= form_with url: approve_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
-              <button type="submit" class="accept-button"><i class="fa fa-check"></i></button>
-            <% end %>
+          <!-- Approve Form -->
+          <%= form_with url: approve_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
+            <button type="submit" class="accept-button"><i class="fa fa-check"></i></button>
+          <% end %>
 
-            <!-- Reject Form -->
-            <%= form_with url: reject_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
-              <button type="submit" class="decline-button"><i class="fa fa-times"></i></button>
-            <% end %>
+          <!-- Reject Form -->
+          <%= form_with url: reject_participation_path(participation), method: :patch, local: true, class: 'inline-form' do %>
+            <button type="submit" class="decline-button"><i class="fa fa-times"></i></button>
+          <% end %>
 
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
+<% end %>
   <div class="container">
     <div class="event-header">
           <% if @event.type_id == 1 %>

@@ -10,7 +10,7 @@
           <li class="pending-item">
             <div class="pending-event">
               <h2><%= participation.event.title %></h2>
-              <p><strong>Status:</strong> <%= participation.status %></p>
+              <p><strong>Status:</strong> <span class="status-badge status-<%= participation.status.downcase %>"><i></i> <%= participation.status %></span></p>
               <p><strong>Date:</strong> <%= participation.event.date.strftime('%d %B %Y - %H:%M') %></p>
               <p><strong>Location:</strong> <%= participation.event.address %></p>
               <p><strong>Capacity:</strong> <%= participation.event.capacity %> people</p>

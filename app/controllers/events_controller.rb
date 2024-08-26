@@ -4,7 +4,8 @@ class EventsController < ApplicationController
 
 # SEARCH QURY CODE IMPORTANT
 def index
-  @events = Event.where(visibility: true).bonzo(params[:page]).per(6)
+  @events = Event.where(visibility: true).page(params[:page]).per(6)
+
 
   # Filtering by search query
   if params[:query].present?

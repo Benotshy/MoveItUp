@@ -3,7 +3,7 @@
 
   <div class="city-dropdown">
     <%= form_with url: events_path, method: :get, local: true do |form| %>
-      <%= form.label :city, "Select City:" %>
+      <%= form.label :city, "Select the city you interested in" %>
       <%= form.select :city, options_for_select(["All", "Agadir", "Casablanca", "Marrakech", "Rabat", "Tangier"], params[:city]), {}, { onchange: "this.form.submit();" } %>
     <% end %>
   </div>
