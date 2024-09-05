@@ -1,11 +1,11 @@
 .user-profile-card {
-  max-width: 600px;
+  width: 600px;
   margin: 0 auto;
-  background: #f9f9f9;
+  margin-top: 20px;
+  background: #fefafa;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
+  box-shadow: 0 0 2px #025956;
 }
 
 .user-avatar {
@@ -26,10 +26,12 @@
 .user-info h1 {
   font-size: 24px;
   margin: 10px 0;
+  color: #025956;
+  letter-spacing: 0.5px;
 }
 
 .user-info h2 {
-  background: #ffa500;
+  background: #EE5A36;
   color: white;
   display: inline-block;
   padding: 5px 10px;
@@ -45,6 +47,9 @@
 
 .user-details p {
   margin: 5px 0;
+  text-align: left;
+  margin-left: 40px;
+
 }
 
 .about-me {
@@ -57,7 +62,7 @@
 }
 
 .btn-primary {
-  background-color: #ffa500;
+  background-color: #EE5A36;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -67,5 +72,5 @@
 }
 
 .btn-primary:hover {
-  background-color: #ff8c00;
+  background-color: #EE5A36;
 }

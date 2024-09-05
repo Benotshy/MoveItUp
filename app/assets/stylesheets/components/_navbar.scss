@@ -49,11 +49,27 @@
   background-color: #025956;
 }
 
-.navbar-nav {
+.nav-link {
+  position: relative; /* Add this line */
   letter-spacing: 0.2px;
   font-size: 16px;
   font-weight: 500;
   text-transform: lowercase;
+}
+
+.nav-link:after {
+  content: "";
+  background-color: #EE5A36;
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  left: 0;
+  bottom: -1px;
+  transition: 0.3s;
+}
+
+.nav-link:hover:after {
+  width: 100%;
 }
 
 .avatar-round {

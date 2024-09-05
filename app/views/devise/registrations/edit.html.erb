@@ -1,9 +1,9 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<center><h2>Edit <%= resource_name.to_s.humanize %></h2></center>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-container">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -21,6 +21,35 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+                <%= f.input :name,
+                required: true,
+                input_html: { autocomplete: "name", class: 'form-input' } %>
+    <%= f.input :surname,
+                required: true,
+                input_html: { autocomplete: "surname", class: 'form-input' } %>
+    <%= f.input :city,
+                required: true,
+                input_html: { autocomplete: "address-level2", class: 'form-input' } %>
+    <%= f.input :date_of_birth,
+            as: :date,
+            start_year: 1950,   # Set the start year as per your requirement
+            end_year: Time.now.year,  # Set the end year dynamically to the current year
+            required: true,
+            input_html: { class: 'form-input' } %>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "tel", class: 'form-input' } %>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email", class: 'form-input' } %>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password", class: 'form-input' } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password", class: 'form-input' } %>
   </div>
 
   <div class="form-actions">
@@ -28,8 +57,8 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<center<h3>Cancel my account</h3>
 
 <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back %></center>
